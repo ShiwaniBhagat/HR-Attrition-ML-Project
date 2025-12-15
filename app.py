@@ -103,3 +103,11 @@ if submitted:
         salary_val
     ] + dept_onehot).reshape(1, -1)
 
+# Scale numeric features
+    scaled_data = scaler.transform(input_data)
+
+    # Make prediction
+    prediction = model.predict(scaled_data)[0]
+    probability = model.predict_proba(scaled_data)[0][1]
+
+ 
