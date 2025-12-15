@@ -91,4 +91,15 @@ if submitted:
     # One-hot encoding for department
     dept_onehot = [1 if d == department else 0 for d in dept_list]
 
+# Combine all inputs
+    input_data = np.array([
+        satisfaction_level,
+        last_evaluation,
+        number_project,
+        average_montly_hours,
+        time_spend_company,
+        work_acc,
+        promo,
+        salary_val
+    ] + dept_onehot).reshape(1, -1)
 
