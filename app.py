@@ -44,5 +44,10 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# Title & Subtitle
+
+st.markdown("<div class='title'>💼 HR Attrition Prediction</div>", unsafe_allow_html=True)
+st.markdown("<div class='sub'>Predict whether an employee will leave the organization</div>", unsafe_allow_html=True)
+
 
 
