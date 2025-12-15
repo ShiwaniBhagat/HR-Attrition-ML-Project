@@ -110,4 +110,23 @@ if submitted:
     prediction = model.predict(scaled_data)[0]
     probability = model.predict_proba(scaled_data)[0][1]
 
- 
+ # Display Result
+
+    if prediction == 1:
+        st.markdown(
+            f"""
+            <div class='result-box' style='background:#FFE5E5; color:#C0392B;'>
+                🚨 <strong>High Attrition Risk!</strong><br>
+                Probability: {probability:.2f}
+            </div>
+            """, unsafe_allow_html=True)
+    else:
+        st.markdown(
+            f"""
+            <div class='result-box' style='background:#E9F7EF; color:#1D8348;'>
+                ✅ <strong>Employee Will Stay</strong><br>
+                Probability of Leaving: {probability:.2f}
+            </div>
+            """, unsafe_allow_html=True)
+
+
