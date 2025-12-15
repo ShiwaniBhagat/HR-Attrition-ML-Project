@@ -76,5 +76,19 @@ with st.form("input_form"):
     department = st.selectbox("Department", dept_list)
 
     submitted = st.form_submit_button("🔍 Predict Attrition")
+# Preprocess & Predict
+
+if submitted:
+
+    # Encode salary
+    salary_map = {"Low": 0, "Medium": 1, "High": 2}
+    salary_val = salary_map[salary]
+
+    # Encode binary values
+    work_acc = 1 if work_accident == "Yes" else 0
+    promo = 1 if promotion_last_5years == "Yes" else 0
+
+    # One-hot encoding for department
+    dept_onehot = [1 if d == department else 0 for d in dept_list]
 
 
